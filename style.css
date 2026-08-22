@@ -8,8 +8,8 @@ body {
     align-items: center;
     min-height: 100vh;
     
-    /* ★グラデーションはなし！その代わり、ベースのミルクティーベージュを少しだけ濃く、まろやかに */
-    background-color: #ECE8DF; 
+    /* ★背景色：ミルクティーベージュの色味をもう少し濃く、はっきりと */
+    background-color: #DFD7C7; 
     
     /* 背景色が変わるときのスピード（0.8秒で優しく変化） */
     transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1);
@@ -34,7 +34,7 @@ body {
     padding: 40px;
     border: 3px solid #5C4B40; /* 枠線はしっかりしたココア色 */
     border-radius: 24px;       
-    box-shadow: 8px 8px 0px #D2C6C0; /* ★飛び出す影の色を、優しい「ミルクティショコラ色」に変更！ */
+    box-shadow: 8px 8px 0px #856556; /* ★飛び出す影の色をご指定の #856556 に変更！ */
     max-width: 900px;
     width: 100%;
     box-sizing: border-box;
@@ -48,8 +48,9 @@ body {
     justify-content: center;
 }
 
+/* ★タイトルをもう少し大きめに変更（1.8rem → 2.2rem） */
 h1 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 900;
     margin-top: 0;
     margin-bottom: 12px;
@@ -79,7 +80,7 @@ h1 {
     border: 2px solid #5C4B40; 
     border-radius: 16px;
     cursor: pointer;
-    box-shadow: 3px 3px 0px #D2C6C0; /* ★ボタンの影も、優しい「ミルクティショコラ色」に！ */
+    box-shadow: 3px 3px 0px #856556; /* ★ボタンの影をご指定の #856556 に変更！ */
     transition: all 0.15s ease;
     text-align: left;
     display: flex;
@@ -91,7 +92,7 @@ h1 {
 /* ボタンホバー時：ペコッと押し込まれるアニメーション */
 .mood-btn:hover {
     transform: translate(1.5px, 1.5px);
-    box-shadow: 1.5px 1.5px 0px #D2C6C0; /* 押し込まれた時も優しい影をキープ */
+    box-shadow: 1.5px 1.5px 0px #856556; /* ★ホバー時も #856556 に */
 }
 
 /* 各ボタンに最初から優しいテーマカラーを配色 */
@@ -140,7 +141,7 @@ h1 {
     padding: 30px;
     border: 2px solid #5C4B40; 
     border-radius: 20px;
-    box-shadow: 4px 4px 0px #D2C6C0; /* ★結果カードの影も、優しい「ミルクティショコラ色」に！ */
+    box-shadow: 4px 4px 0px #856556; /* ★結果カードの影をご指定の #856556 に変更！ */
     height: 100%;
     box-sizing: border-box;
     animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
@@ -176,11 +177,11 @@ h1 {
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* ★背景色の着替えテーマ（グラデーションなしで、パステルの色味を少ししっかり出しました） */
-body.bg-relax { background-color: #D6EFE7; }   /* 優しいミントグリーン */
-body.bg-active { background-color: #FDF0DA; }  /* 優しいアプリコット */
-body.bg-lazy { background-color: #F1E5F5; }    /* 優しいラベンダーパープル */
-body.bg-refresh { background-color: #E2EFF5; } /* 優しいソーダブルー */
+/* ★背景色の着替えテーマ：白っぽさを減らし、色味をもう少ししっかり濃いめに調整しました */
+body.bg-relax { background-color: #C3ECE1; }   /* 優しいミントグリーン */
+body.bg-active { background-color: #FCE8CA; }  /* 優しいアプリコット */
+body.bg-lazy { background-color: #EADAF0; }    /* 優しいラベンダーパープル */
+body.bg-refresh { background-color: #D3E7F0; } /* 優しいソーダブルー */
 
 /* 【スマホ対応】画面が狭いときは自動で縦並びに崩す設定 */
 @media (max-width: 768px) {
