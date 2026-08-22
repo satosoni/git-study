@@ -7,9 +7,16 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #F4F1DE; /* レトロな生成り色 */
-    transition: background-color 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    color: #2D3142;
+    
+    /* ★やんわりグラデーションを重ねる裏技 */
+    /* ベースの色に、上から「白から少し影がつく斜めのグラデーション」を薄く重ねています */
+    background-color: #F2EFE9; /* 優しいミルクティー色 */
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(0, 0, 0, 0.03) 100%);
+    background-attachment: fixed;
+    
+    /* 背景色が変わるときのスピードを少しゆっくりにして、さらにやわらかい印象に */
+    transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    color: #5C4B40; /* ★枠線や文字を、少し優しくて上品な「ココアミルクブラウン」に変更 */
 }
 
 .app-wrapper {
@@ -21,16 +28,16 @@ body {
     box-sizing: border-box;
 }
 
-/* メインコンテナ（横並びのレイアウトに設定） */
+/* メインコンテナ（横並びのレイアウト） */
 .container {
     display: flex;
     flex-direction: row; /* 左右に並べる */
     gap: 40px;
     background: #FFFFFF;
     padding: 40px;
-    border: 4px solid #2D3142; /* 太い枠線 */
-    border-radius: 24px;       /* 全体も丸みのある角に */
-    box-shadow: 12px 12px 0px #2D3142; /* ぼかさないクッキリした影 */
+    border: 3px solid #5C4B40; /* ★枠線を少しだけ細く（4px→3px）して主張を優しく */
+    border-radius: 24px;       
+    box-shadow: 8px 8px 0px #5C4B40; /* ★影の飛び出し具合も少し控えめ（12px→8px）にして上品に */
     max-width: 900px;
     width: 100%;
     box-sizing: border-box;
@@ -49,12 +56,12 @@ h1 {
     font-weight: 900;
     margin-top: 0;
     margin-bottom: 12px;
-    color: #2D3142;
+    color: #5C4B40; 
     line-height: 1.3;
 }
 
 .subtitle {
-    color: #4F5D75;
+    color: #8C7A70; /* ★サブタイトルも少し明るめの優しいココア色に */
     font-size: 0.95rem;
     margin-bottom: 25px;
     line-height: 1.5;
@@ -72,28 +79,29 @@ h1 {
     padding: 16px 20px;
     font-size: 1.05rem;
     font-weight: 700;
-    border: 3px solid #2D3142;
-    border-radius: 16px; /* ボタンの角も丸っぽく */
+    border: 2px solid #5C4B40; /* ★ボタンの枠線も細く（3px→2px）して圧迫感をなくしました */
+    border-radius: 16px;
     cursor: pointer;
-    box-shadow: 4px 4px 0px #2D3142;
+    box-shadow: 3px 3px 0px #5C4B40; /* ★ボタンの影も少し控えめに */
     transition: all 0.15s ease;
     text-align: left;
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #5C4B40; 
 }
 
 /* ボタンホバー時：ペコッと押し込まれるアニメーション */
 .mood-btn:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #2D3142;
+    transform: translate(1.5px, 1.5px);
+    box-shadow: 1.5px 1.5px 0px #5C4B40;
 }
 
-/* 各ボタンに最初から優しいテーマカラーを配色 */
-.relax-btn { background-color: #D5F5E3; }   /* パステルグリーン */
-.active-btn { background-color: #FCF3CF; }  /* パステルイエロー */
-.lazy-btn { background-color: #EBDEF0; }    /* パステルパープル */
-.refresh-btn { background-color: #EBF5FB; } /* パステルブルー */
+/* 各ボタンに最初から優しいテーマカラーを配色（少し彩度を落として、より「やわらかい」パステルに調整） */
+.relax-btn { background-color: #E2F7EB; }   /* 優しいミント */
+.active-btn { background-color: #FFF9E1; }  /* 優しいカスタード */
+.lazy-btn { background-color: #F4EDF7; }    /* 優しいラベンダー */
+.refresh-btn { background-color: #EAF5FC; } /* 優しいソーダ */
 
 /* 右側パネル（結果表示エリア） */
 .right-panel {
@@ -103,39 +111,39 @@ h1 {
 
 /* 初期状態の案内枠（点線の丸角カード） */
 .placeholder-card {
-    border: 3px dashed #BCC2CD;
-    border-radius: 20px; /* 角を丸っぽく */
+    border: 2.5px dashed #D6C5BC; 
+    border-radius: 20px;
     padding: 30px;
     text-align: center;
-    color: #7A8294;
+    color: #8C7A70; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
     box-sizing: border-box;
-    background-color: #FAFAFA;
+    background-color: #FAF9F6; /* 温かみのあるうっすらした白 */
 }
 
 .placeholder-icon {
     font-size: 3rem;
     margin-bottom: 15px;
-    animation: float 3s ease-in-out infinite; /* ふわふわ浮く動き */
+    animation: float 3s ease-in-out infinite;
 }
 
 /* アイコンが浮遊するアニメーション */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
 }
 
-/* 結果表示カード（角をしっかり丸っぽく！） */
+/* 結果表示カード */
 .result-card {
     background-color: #FFFFFF;
     padding: 30px;
-    border: 3px solid #2D3142;
-    border-radius: 20px; /* 結果のカードの角を丸っぽく！ */
-    box-shadow: 6px 6px 0px #2D3142;
+    border: 2px solid #5C4B40; /* ★枠線を細く（3px→2px） */
+    border-radius: 20px;
+    box-shadow: 4px 4px 0px #5C4B40; /* ★影を控えめに（6px→4px） */
     height: 100%;
     box-sizing: border-box;
     animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
@@ -149,8 +157,8 @@ h1 {
     margin-bottom: 15px;
     font-size: 1.3rem;
     font-weight: 900;
-    color: #2D3142;
-    border-bottom: 2px dotted #2D3142; /* 点線の区切り */
+    color: #5C4B40;
+    border-bottom: 2px dotted #5C4B40; 
     padding-bottom: 10px;
 }
 
@@ -158,7 +166,7 @@ h1 {
     font-size: 1rem;
     line-height: 1.7;
     margin: 0;
-    color: #2D3142;
+    color: #5C4B40;
 }
 
 .hidden {
@@ -167,15 +175,15 @@ h1 {
 
 /* ポップに飛び出すアニメーション */
 @keyframes popIn {
-    0% { transform: scale(0.92); opacity: 0; }
+    0% { transform: scale(0.95); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* 背景色の着替えテーマ（クリック時、全体の背景色をチェンジ） */
-body.bg-relax { background-color: #E8F8F5; }   /* 優しいミント */
-body.bg-active { background-color: #FEF9E7; }  /* 優しいクリーム */
-body.bg-lazy { background-color: #F5EEF8; }    /* 優しいラベンダー */
-body.bg-refresh { background-color: #EAF2F8; } /* 優しいライトブルー */
+/* ★背景色の着替えテーマ（グラデーションの下地になる優しいパステル） */
+body.bg-relax { background-color: #E2F5F0; }   /* 優しいペパーミント */
+body.bg-active { background-color: #FFF5E4; }  /* 優しいミルクキャラメル */
+body.bg-lazy { background-color: #F2EBF4; }    /* 優しいラベンダー */
+body.bg-refresh { background-color: #E9F1F5; } /* 優しいアクアブルー */
 
 /* 【スマホ対応】画面が狭いときは自動で縦並びに崩す設定 */
 @media (max-width: 768px) {
