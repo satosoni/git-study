@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     
     /* ★背景色：ミルクティーベージュの色味をもう少し濃く、はっきりと */
-    background-color: #DFD7C7; 
+    background-color: #e7e3db; 
     
     /* 背景色が変わるときのスピード（0.8秒で優しく変化） */
     transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1);
@@ -34,7 +34,7 @@ body {
     padding: 40px;
     border: 3px solid #5C4B40; /* 枠線はしっかりしたココア色 */
     border-radius: 24px;       
-    box-shadow: 8px 8px 0px #856556; /* ★飛び出す影の色をご指定の #856556 に変更！ */
+    box-shadow: 8px 8px 0px #d2b48c; /* ★飛び出す影の色をご指定の #856556 に変更！ */
     max-width: 900px;
     width: 100%;
     box-sizing: border-box;
@@ -80,7 +80,7 @@ h1 {
     border: 2px solid #5C4B40; 
     border-radius: 16px;
     cursor: pointer;
-    box-shadow: 3px 3px 0px #856556; /* ★ボタンの影をご指定の #856556 に変更！ */
+    box-shadow: 3px 3px 0px #d2b48c; /* ★ボタンの影をご指定の #d2b48c に変更！ */
     transition: all 0.15s ease;
     text-align: left;
     display: flex;
@@ -92,14 +92,14 @@ h1 {
 /* ボタンホバー時：ペコッと押し込まれるアニメーション */
 .mood-btn:hover {
     transform: translate(1.5px, 1.5px);
-    box-shadow: 1.5px 1.5px 0px #856556; /* ★ホバー時も #856556 に */
+    box-shadow: 1.5px 1.5px 0px #d2b48c; /* ★ホバー時も #d2b48c に */
 }
 
 /* 各ボタンに最初から優しいテーマカラーを配色 */
-.relax-btn { background-color: #E2F7EB; }   /* 優しいミント */
+.relax-btn { background-color: #eafaf1; }   /* 優しいミント */
 .active-btn { background-color: #FFF9E1; }  /* 優しいカスタード */
-.lazy-btn { background-color: #F4EDF7; }    /* 優しいラベンダー */
-.refresh-btn { background-color: #EAF5FC; } /* 優しいソーダ */
+.lazy-btn { background-color: #f3e9f8; }    /* 優しいラベンダー */
+.refresh-btn { background-color: #e3f1fa; } /* 優しいソーダ */
 
 /* 右側パネル（結果表示エリア） */
 .right-panel {
@@ -141,7 +141,7 @@ h1 {
     padding: 30px;
     border: 2px solid #5C4B40; 
     border-radius: 20px;
-    box-shadow: 4px 4px 0px #856556; /* ★結果カードの影をご指定の #856556 に変更！ */
+    box-shadow: 4px 4px 0px #d2b48c; /* ★結果カードの影をご指定の #856556 に変更！ */
     height: 100%;
     box-sizing: border-box;
     animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
