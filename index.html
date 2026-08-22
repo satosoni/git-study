@@ -4,23 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>今日の過ごし方提案アプリ</title>
+    <!-- 優しい丸ゴシックフォント「Zen Maru Gothic」を読み込みます -->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>今の気分はどれ？ 🤔</h1>
-        <p class="subtitle">あなたの今の気分に合わせて、おすすめの過ごし方を提案します</p>
-        
-        <div class="button-container">
-            <button class="mood-btn" onclick="recommend('relax')">🍵 まったりリラックス</button>
-            <button class="mood-btn" onclick="recommend('active')">🔥 やる気MAX！</button>
-            <button class="mood-btn" onclick="recommend('lazy')">🛌 もう何もしたくない</button>
-            <button class="mood-btn" onclick="recommend('refresh')">🍃 気持ちリフレッシュ</button>
-        </div>
+    <div class="app-wrapper">
+        <div class="container">
+            
+            <!-- 左側：選択エリア -->
+            <div class="left-panel">
+                <h1>今の気分はどれ？ 🤔</h1>
+                <p class="subtitle">あなたの今の気分に合わせて、おすすめの過ごし方を提案します</p>
+                
+                <div class="button-container">
+                    <button class="mood-btn relax-btn" onclick="recommend('relax')">🍵 まったりリラックス</button>
+                    <button class="mood-btn active-btn" onclick="recommend('active')">🔥 やる気MAX！</button>
+                    <button class="mood-btn lazy-btn" onclick="recommend('lazy')">🛌 もう何もしたくない</button>
+                    <button class="mood-btn refresh-btn" onclick="recommend('refresh')">🍃 気持ちリフレッシュ</button>
+                </div>
+            </div>
 
-        <div id="result-card" class="result-card hidden">
-            <h2>おすすめの過ごし方 ✨</h2>
-            <p id="result-text"></p>
+            <!-- 右側：結果エリア -->
+            <div class="right-panel">
+                <!-- 初期状態の優しい案内 -->
+                <div id="placeholder" class="placeholder-card">
+                    <div class="placeholder-icon">🎈</div>
+                    <p>左のボタンから<br>今の気分を選んでみてね！</p>
+                </div>
+                
+                <!-- 結果カード（最初は非表示） -->
+                <div id="result-card" class="result-card hidden">
+                    <h2>おすすめの過ごし方 ✨</h2>
+                    <p id="result-text"></p>
+                </div>
+            </div>
+
         </div>
     </div>
 

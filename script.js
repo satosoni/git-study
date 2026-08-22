@@ -1,4 +1,5 @@
 function recommend(mood) {
+    const placeholder = document.getElementById('placeholder');
     const resultCard = document.getElementById('result-card');
     const resultText = document.getElementById('result-text');
     const body = document.body;
@@ -23,7 +24,10 @@ function recommend(mood) {
         message = '少しだけ窓を開けて深呼吸をしてみましょう。外の空気を吸いながら近所を5分だけ散歩したり、アップテンポな曲を聴きながら軽いストレッチをするのがおすすめです！🍃🚶';
     }
 
-    // 結果を表示する
+    // プレースホルダー（案内）を隠して、結果カードを表示する
+    if (placeholder) {
+        placeholder.classList.add('hidden');
+    }
     resultText.innerHTML = message;
     resultCard.classList.remove('hidden');
 }

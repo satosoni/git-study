@@ -1,94 +1,190 @@
-/* 全体の基本設定 */
+/* 全体の基本設定（優しい丸ゴシックを設定） */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f5f6fa;
-    transition: background-color 0.8s ease; /* 背景色をふわっと変える */
-    color: #333;
+    background-color: #F4F1DE; /* レトロな生成り色 */
+    transition: background-color 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    color: #2D3142;
 }
 
-/* 中央のカードコンテナ */
+.app-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* メインコンテナ（横並びのレイアウトに設定） */
 .container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: row; /* 左右に並べる */
+    gap: 40px;
+    background: #FFFFFF;
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 90%;
-    backdrop-filter: blur(10px);
+    border: 4px solid #2D3142; /* 太い枠線 */
+    border-radius: 24px;       /* 全体も丸みのある角に */
+    box-shadow: 12px 12px 0px #2D3142; /* ぼかさないクッキリした影 */
+    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 左右のパネルを半分ずつの幅にする */
+.left-panel, .right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1 {
     font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #2c3e50;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #2D3142;
+    line-height: 1.3;
 }
 
 .subtitle {
-    color: #7f8c8d;
-    font-size: 0.9rem;
-    margin-bottom: 30px;
+    color: #4F5D75;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
 }
 
-/* ボタンの並び */
+/* ボタンの縦並び */
 .button-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 30px;
+    gap: 16px;
 }
 
-/* 気分ボタンのスタイル */
+/* 気分ボタン（丸みを持たせた可愛いステッカー風） */
 .mood-btn {
-    padding: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border: 3px solid #2D3142;
+    border-radius: 16px; /* ボタンの角も丸っぽく */
     cursor: pointer;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: all 0.2s ease;
+    box-shadow: 4px 4px 0px #2D3142;
+    transition: all 0.15s ease;
     text-align: left;
-    padding-left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+/* ボタンホバー時：ペコッと押し込まれるアニメーション */
 .mood-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    background-color: #f8f9fa;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #2D3142;
 }
 
-/* 結果表示カード */
+/* 各ボタンに最初から優しいテーマカラーを配色 */
+.relax-btn { background-color: #D5F5E3; }   /* パステルグリーン */
+.active-btn { background-color: #FCF3CF; }  /* パステルイエロー */
+.lazy-btn { background-color: #EBDEF0; }    /* パステルパープル */
+.refresh-btn { background-color: #EBF5FB; } /* パステルブルー */
+
+/* 右側パネル（結果表示エリア） */
+.right-panel {
+    min-height: 280px;
+    position: relative;
+}
+
+/* 初期状態の案内枠（点線の丸角カード） */
+.placeholder-card {
+    border: 3px dashed #BCC2CD;
+    border-radius: 20px; /* 角を丸っぽく */
+    padding: 30px;
+    text-align: center;
+    color: #7A8294;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #FAFAFA;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite; /* ふわふわ浮く動き */
+}
+
+/* アイコンが浮遊するアニメーション */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 結果表示カード（角をしっかり丸っぽく！） */
 .result-card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 5px solid #3498db;
-    text-align: left;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    animation: fadeIn 0.5s ease;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border: 3px solid #2D3142;
+    border-radius: 20px; /* 結果のカードの角を丸っぽく！ */
+    box-shadow: 6px 6px 0px #2D3142;
+    height: 100%;
+    box-sizing: border-box;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-card h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #2D3142;
+    border-bottom: 2px dotted #2D3142; /* 点線の区切り */
+    padding-bottom: 10px;
+}
+
+#result-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    color: #2D3142;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
-/* 結果のアニメーション */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* ポップに飛び出すアニメーション */
+@keyframes popIn {
+    0% { transform: scale(0.92); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-/* 背景色の着替えテーマ（JavaScriptで切り替えます） */
-body.bg-relax { background-color: #e8f5e9; } /* 優しいグリーン */
-body.bg-active { background-color: #ffe0b2; } /* 元気なオレンジ */
-body.bg-lazy { background-color: #ede7f6; }   /* 落ち着くパープル */
-body.bg-refresh { background-color: #e0f7fa; }/* 爽やかなブルー */
+/* 背景色の着替えテーマ（クリック時、全体の背景色をチェンジ） */
+body.bg-relax { background-color: #E8F8F5; }   /* 優しいミント */
+body.bg-active { background-color: #FEF9E7; }  /* 優しいクリーム */
+body.bg-lazy { background-color: #F5EEF8; }    /* 優しいラベンダー */
+body.bg-refresh { background-color: #EAF2F8; } /* 優しいライトブルー */
+
+/* 【スマホ対応】画面が狭いときは自動で縦並びに崩す設定 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 25px;
+    }
+    .right-panel {
+        min-height: auto;
+    }
+}
