@@ -96,7 +96,7 @@ h1 {
 }
 
 /* 各ボタンに最初から優しいテーマカラーを配色 */
-.relax-btn { background-color: #eafaf1; }   /* 優しいミント */
+.relax-btn { background-color: #eefaea; }   /* 優しいミント */
 .active-btn { background-color: #FFF9E1; }  /* 優しいカスタード */
 .lazy-btn { background-color: #f3e9f8; }    /* 優しいラベンダー */
 .refresh-btn { background-color: #e3f1fa; } /* 優しいソーダ */
@@ -178,7 +178,7 @@ h1 {
 }
 
 /* ★背景色の着替えテーマ：白っぽさを減らし、色味をもう少ししっかり濃いめに調整しました */
-body.bg-relax { background-color: #C3ECE1; }   /* 優しいミントグリーン */
+body.bg-relax { background-color: #d4f5d4; }   /* 優しいミントグリーン */
 body.bg-active { background-color: #FCE8CA; }  /* 優しいアプリコット */
 body.bg-lazy { background-color: #EADAF0; }    /* 優しいラベンダーパープル */
 body.bg-refresh { background-color: #D3E7F0; } /* 優しいソーダブルー */
